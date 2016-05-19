@@ -1,4 +1,4 @@
-package com.demo.panguso.demo20160516;
+package com.demo.panguso.demo20160516.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,9 +6,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.TabLayout;
 
-import com.demo.panguso.demo20160516.Fragment.RecommandFragment;
-import com.demo.panguso.demo20160516.Fragment.Fragment2;
-import com.demo.panguso.demo20160516.Fragment.Fragment3;
+import com.demo.panguso.demo20160516.adapter.MainAdapter;
+import com.demo.panguso.demo20160516.R;
+import com.demo.panguso.demo20160516.fragment.RecommandFragment;
+import com.demo.panguso.demo20160516.fragment.Fragment2;
+import com.demo.panguso.demo20160516.fragment.Fragment3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViewPager() {
-        mViewPager.setOffscreenPageLimit(2);
+//        mViewPager.setOffscreenPageLimit(2);
         MainAdapter pageAdapter = new MainAdapter(getSupportFragmentManager());
         if (mFragments != null && !mFragments.isEmpty()) {
             for (int i = 0; i < mFragments.size(); i++) {

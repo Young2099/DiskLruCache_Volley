@@ -1,4 +1,4 @@
-package com.demo.panguso.demo20160516;
+package com.demo.panguso.demo20160516.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

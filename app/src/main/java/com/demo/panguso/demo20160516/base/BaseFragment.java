@@ -1,4 +1,4 @@
-package com.demo.panguso.demo20160516.BaseClass;
+package com.demo.panguso.demo20160516.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.demo.panguso.demo20160516.MainActivity;
+import com.demo.panguso.demo20160516.activity.MainActivity;
 
 /**
  * Created by panguso on 2016/5/16.
