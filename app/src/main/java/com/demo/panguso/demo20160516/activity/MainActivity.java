@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 pageAdapter.addFragment((Fragment) map.get("fragment"), (String) map.get("title"));
             }
             mViewPager.setAdapter(pageAdapter);
-            mViewPager.setCurrentItem(1);
+            mViewPager.setCurrentItem(0);
             mTableLayout.setupWithViewPager(mViewPager);
         }
     }

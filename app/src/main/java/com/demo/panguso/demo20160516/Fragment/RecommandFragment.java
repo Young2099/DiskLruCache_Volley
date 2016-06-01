@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.demo.panguso.demo20160516.R;
 import com.demo.panguso.demo20160516.adapter.RecommandAdapter;
@@ -13,7 +14,7 @@ import com.demo.panguso.demo20160516.adapter.ViewPagerAdapter;
 import com.demo.panguso.demo20160516.base.BaseFragment;
 
 /**
- * Created by panguso on 2016/5/16.
+ * Created by yangfang on 2016/5/16.
  */
 public class RecommandFragment extends BaseFragment {
     SwipeRefreshLayout view;
@@ -23,6 +24,7 @@ public class RecommandFragment extends BaseFragment {
     View mHeader;
     ViewPager mViewPager;
     ViewPagerAdapter mViewPagerAdapter;
+    LinearLayout point;
 
     @Override
     public View initView() {
@@ -40,7 +42,14 @@ public class RecommandFragment extends BaseFragment {
         mHeader = LayoutInflater.from(mContext).inflate(R.layout.common_viewpager, view, false);
         mAdapter.setHeadrView(mHeader);
         mViewPager = (ViewPager) mHeader.findViewById(R.id.r_viewpager);
-        mViewPagerAdapter = new ViewPagerAdapter(mContext);
+        point = (LinearLayout) mHeader.findViewById(R.id.ll_group_point);
+        mViewPagerAdapter = new ViewPagerAdapter(mContext, mViewPager, point);
         mViewPager.setAdapter(mViewPagerAdapter);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
 }
