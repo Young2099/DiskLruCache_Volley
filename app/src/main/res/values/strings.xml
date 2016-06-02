@@ -7,4 +7,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="er_text">点评我去过的目的地，帮助更多穷游er</string>
+    <string name="trip">路途中</string>
+    <string name="hotel">订酒店</string>
+    <string name="discount">抢折扣</string>
+    <string name="smart">看锦囊</string>
 </resources>

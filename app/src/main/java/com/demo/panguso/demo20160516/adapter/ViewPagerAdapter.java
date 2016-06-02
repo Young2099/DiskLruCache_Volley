@@ -64,11 +64,10 @@ public class ViewPagerAdapter extends PagerAdapter {
             handler.removeCallbacksAndMessages(MOVE_PAGER);
             handler.sendEmptyMessageDelayed(MOVE_PAGER, 3000);
         }
-
+        //设置缓存的页面数量
         mViewPager.setOnPageChangeListener(new CurrentPagerChangeListener());
 
         mViewPager.setOnTouchListener(new ViewPagerTounch());
-
     }
 
     /**
@@ -132,7 +131,6 @@ public class ViewPagerAdapter extends PagerAdapter {
     private class CurrentPagerChangeListener implements ViewPager.OnPageChangeListener {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
         }
 
         @Override
@@ -171,7 +169,7 @@ public class ViewPagerAdapter extends PagerAdapter {
                     if (dx != 0) {
                         handler.removeMessages(MOVE_PAGER);
                     }
-                    if (dy > 0) {
+                    if (dy > 0 && dx == 0) {
                         return true;
                     }
                     break;
@@ -184,4 +182,5 @@ public class ViewPagerAdapter extends PagerAdapter {
             return false;
         }
     }
+
 }
