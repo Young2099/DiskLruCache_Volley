@@ -7,10 +7,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="Theme.ToolBar.yf" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:title">推荐</item>
-        <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow.ZhiHu</item>
-    </style>
     <style name="ActionButton.Overflow.ZhiHu" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
         <!--<item name="android:src">@mipmap/ic_menu_more_overflow</item>-->
     </style>

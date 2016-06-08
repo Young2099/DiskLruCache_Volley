@@ -14,6 +14,7 @@ import com.demo.panguso.demo20160516.adapter.ViewPagerAdapter;
 import com.demo.panguso.demo20160516.base.BaseFragment;
 
 /**
+ *
  * Created by yangfang on 2016/5/16.
  */
 public class RecommandFragment extends BaseFragment {
@@ -32,6 +33,7 @@ public class RecommandFragment extends BaseFragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
         manager = new LinearLayoutManager(mContext);
         mRecyclerView.setLayoutManager(manager);
+//        mRecyclerView.addItemDecoration(new D);
         mAdapter = new RecommandAdapter(mContext);
         setHead(mRecyclerView);
         mRecyclerView.setAdapter(mAdapter);

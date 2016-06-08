@@ -5,9 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.demo.panguso.demo20160516.R;
+import com.demo.panguso.demo20160516.holder.DiscountHolder;
+import com.demo.panguso.demo20160516.holder.DiscoverHolder;
+import com.demo.panguso.demo20160516.holder.MyViewHolder;
 
 import java.util.ArrayList;
 
@@ -16,16 +18,14 @@ import java.util.ArrayList;
  */
 public class RecommandAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final int TYPE_HEADER = 0;
-    private static final int TYPE_NORMAL = 1;
+    private static final int TYPE_NORMAL1 = 1;
+    private static final int TYPE_NORMAL2 = 2;
     private View mHeaderView;
     private ArrayList<String> mDatas = new ArrayList<>();
     Context mContext;
 
     public RecommandAdapter(Context context) {
         mContext = context;
-        for (int i = 0; i < 10; i++) {
-            mDatas.add("" + i);
-        }
     }
 
 
@@ -40,20 +40,34 @@ public class RecommandAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemViewType(int position) {
-
+        int type = 0;
         if (position == 0) {
-            return TYPE_HEADER;
+            type = TYPE_HEADER;
+        } else if (position == 1) {
+            type = TYPE_NORMAL1;
+        } else if (position == 2) {
+            type = TYPE_NORMAL2;
         }
-        return position;
+
+        return type;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (mHeaderView != null && viewType == TYPE_HEADER) {
-            return new Holder(mHeaderView);
+        RecyclerView.ViewHolder viewHolder = null;
+        if(viewType ==TYPE_HEADER){
+            viewHolder  = new MyViewHolder(mHeaderView);
         }
-        View layout = LayoutInflater.from(mContext).inflate(R.layout.item_layout, parent, false);
-        return new Holder(layout);
+        if (viewType == TYPE_NORMAL2) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.item_layout, parent, false);
+            viewHolder = new DiscountHolder(view);
+
+        }
+        if (viewType == TYPE_NORMAL1) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.item_second_xml, parent, false);
+            viewHolder = new DiscoverHolder(view);
+        }
+        return viewHolder;
     }
 
     @Override
@@ -61,25 +75,22 @@ public class RecommandAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         if (getItemViewType(position) == TYPE_HEADER) {
             return;
         }
-        if (holder instanceof Holder) {
-            ((Holder) holder).mText.setText(mDatas.get(position));
+        if (holder instanceof DiscountHolder) {
+            DiscountHolder viewHolder = (DiscountHolder) holder;
+            viewHolder.tv.setText("6666666");
+        }
+        if (holder instanceof DiscoverHolder) {
+            DiscoverHolder viewHolder = (DiscoverHolder) holder;
+            viewHolder.iv.setImageResource(R.drawable.a);
+//            viewHolder.iv1.setImageResource(R.drawable.b);
+//            viewHolder.iv2.setImageResource(R.drawable.d);
+
         }
     }
 
     @Override
     public int getItemCount() {
-        return mDatas.size();
-    }
-
-
-    class Holder extends RecyclerView.ViewHolder {
-        TextView mText;
-
-        public Holder(View itemView) {
-            super(itemView);
-            if (itemView == mHeaderView) return;
-            mText = (TextView) itemView.findViewById(R.id.tv);
-        }
+        return 3;
     }
 
 }
