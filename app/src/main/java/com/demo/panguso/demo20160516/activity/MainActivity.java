@@ -1,16 +1,17 @@
 package com.demo.panguso.demo20160516.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.design.widget.TabLayout;
 
-import com.demo.panguso.demo20160516.adapter.MainAdapter;
 import com.demo.panguso.demo20160516.R;
-import com.demo.panguso.demo20160516.fragment.RecommandFragment;
-import com.demo.panguso.demo20160516.fragment.Fragment2;
+import com.demo.panguso.demo20160516.adapter.MainAdapter;
+import com.demo.panguso.demo20160516.fragment.ArriveFragment;
 import com.demo.panguso.demo20160516.fragment.Fragment3;
+import com.demo.panguso.demo20160516.fragment.RecommandFragment;
+import com.demo.panguso.demo20160516.utils.ImageCacheManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout mTableLayout;
     private ViewPager mViewPager;
     private List<Map<String, Object>> mFragments;
+    private ImageCacheManager mImageCacheManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +31,12 @@ public class MainActivity extends AppCompatActivity {
         initView();
         initFragments();
         initViewPager();
+        mImageCacheManager = new ImageCacheManager(this);
     }
 
     private void initFragments() {
         RecommandFragment fragment1 = new RecommandFragment();
-        Fragment2 fragment2 = new Fragment2();
+        ArriveFragment fragment2 = new ArriveFragment();
         Fragment3 fragment3 = new Fragment3();
         setFragment(fragment1, "推荐");
         setFragment(fragment2, "目的地");
@@ -70,5 +73,9 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         mTableLayout = (TabLayout) findViewById(R.id.tabLayout);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
+    }
+
+    public ImageCacheManager getImageCacheManager() {
+        return mImageCacheManager;
     }
 }

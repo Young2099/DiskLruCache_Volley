@@ -12,7 +12,9 @@ public class OkHttpUtils {
     private static OkHttpUtils okHttpUtils;
     private OkHttpClient okHttpClient;
     private Request mRequest;
-
+    public OkHttpUtils() {
+        okHttpClient = new OkHttpClient();
+    }
     public static OkHttpUtils getInstance() {
         if (okHttpUtils == null) {
             synchronized (OkHttpUtils.class) {
