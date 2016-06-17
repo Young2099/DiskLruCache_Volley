@@ -11,7 +11,7 @@ import com.demo.panguso.demo20160516.adapter.MainAdapter;
 import com.demo.panguso.demo20160516.fragment.ArriveFragment;
 import com.demo.panguso.demo20160516.fragment.Fragment3;
 import com.demo.panguso.demo20160516.fragment.RecommandFragment;
-import com.demo.panguso.demo20160516.utils.ImageCacheManager;
+import com.demo.panguso.demo20160516.utils.imageview.ImageCacheManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;

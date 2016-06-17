@@ -1,4 +1,4 @@
-package com.demo.panguso.demo20160516.utils;
+package com.demo.panguso.demo20160516.utils.imageview;
 
 import android.app.ActivityManager;
 import android.content.Context;

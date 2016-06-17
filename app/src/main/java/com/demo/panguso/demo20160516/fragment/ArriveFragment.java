@@ -4,8 +4,11 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.StringRequest;
 import com.demo.panguso.demo20160516.R;
 import com.demo.panguso.demo20160516.base.BaseFragment;
 
@@ -36,6 +39,18 @@ public class ArriveFragment extends BaseFragment {
             public void onResponse(ImageLoader.ImageContainer response, boolean isImmediate) {
                 Bitmap bitmap = response.getBitmap();
                 iv.setImageBitmap(bitmap);
+            }
+        });
+
+        StringRequest request = new StringRequest(Request.Method.GET, "", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
             }
         });
     }
