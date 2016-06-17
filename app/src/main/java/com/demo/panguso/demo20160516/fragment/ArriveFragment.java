@@ -14,7 +14,7 @@ import com.demo.panguso.demo20160516.base.BaseFragment;
  *
  */
 public class ArriveFragment extends BaseFragment {
-    String url = "http://www.wed114.cn/jiehun/uploads/allimg/160426/39_160426110624_1.jpg";
+    String url = "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=176005081,877018693&fm=111&gp=0.jpg";
     ImageView iv;
 
     @Override
